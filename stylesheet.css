@@ -38,10 +38,17 @@ header h2 {
 }
 
 footer {
+ -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
   box-sizing: content-box;
+  width: 800px;
   margin: auto;
+  padding: 10px;
   overflow: hidden;
-  border: none;
+  border: 0 solid;
+  border-top: 1px solid rgba(140,140,140,1);
+  color: rgba(255,255,255,1);
+  text-align: center;
 }
 
 .content {
