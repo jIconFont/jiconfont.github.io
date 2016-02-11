@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+  <head>
+    <meta charset='utf-8'>
+    <title>jIconFont</title>
+    <meta name="viewport" content="width=800">
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+  </head>
+
+  <body>
+    
+      <header>
+         <h1>jIconFont</h1>
+            <h2>
+              <a href="http://jiconfont.github.io/"><img src="images/home.png" onmouseover="this.src='images/home_hover.png'" onmouseout="this.src='images/home.png'" /></a>
+              <a href="https://github.com/jIconFont"><img src="images/github.png" onmouseover="this.src='images/github_hover.png'" onmouseout="this.src='images/github.png'" /></a>
+            </h2>
+      </header>
+
+
+      <section class="content">
+        
+        <h1>jIconFont - JavaFX</h1>
+
+<p>jIconFont-JavaFX is a API to provide icons generated from any IconFont. These icons can be used in JavaFX.</p>
+
+<h2>Usage</h2>
+
+<h3>Example 1</h3>
+
+<pre class="prettyprint lang-java">
+// Register the IconFont
+IconFontFX.register(FontAwesome.getIconFont());
+
+IconNode iconNode = new IconNode(FontAwesome.SMILE_O);
+iconNode.setIconSize(40);
+iconNode.setFill(Color.DARKGREEN);
+</pre>
+<p><img src="images/javafx-example1.png"></p>
+
+<h3>Example 2</h3>
+
+<pre class="prettyprint lang-java">
+// Register the IconFont
+IconFontFX.register(FontAwesome.getIconFont());
+
+IconNode iconNode = new IconNode(FontAwesome.SMILE_O);
+iconNode.setIconSize(18);
+
+Label label = new Label("Hello!");
+label.setGraphic(iconNode);
+</pre>
+<p><img src="images/javafx-example2.png"></p>
+
+<h3>Example 3</h3>
+
+<pre class="prettyprint lang-java">
+// Register the IconFont
+IconFontFX.register(FontAwesome.getIconFont());
+
+IconNode iconNode = new IconNode(FontAwesome.FLOPPY_O);
+iconNode.setIconSize(15);
+iconNode.setFill(Color.BLACK);
+
+Button button = new Button();
+button.setGraphic(iconNode);
+</pre>
+<p><img src="images/javafx-example3.png"></p>
+
+<h3>Example 4</h3>
+
+<pre class="prettyprint lang-java">
+// Register the IconFont
+IconFontFX.register(FontAwesome.getIconFont());
+
+IconNode iconNode = new IconNode(FontAwesome.FLOPPY_O);
+iconNode.setIconSize(15);
+iconNode.setFill(Color.BLACK);
+
+Button button = new Button("Save");
+button.setGraphic(iconNode);
+</pre>
+<p><img src="images/javafx-example4.png"></p>
+
+<h3>Example 5 (Stacked Icons)</h3>
+
+<pre class="prettyprint lang-java">
+// Register the IconFonts
+IconFontFX.register(FontAwesome.getIconFont());
+IconFontFX.register(Elusive.getIconFont());
+
+IconNode iconNode1 = new IconNode(FontAwesome.DATABASE);
+iconNode1.setIconSize(26);
+iconNode1.setFill(Color.BLACK);
+
+IconNode iconNode2 = new IconNode(Elusive.REMOVE);
+iconNode2.setIconSize(14);
+iconNode2.setFill(Color.RED);
+iconNode2.setStroke(Color.WHITE);
+
+StackedIconNode stackedIconNode = new StackedIconNode(iconNode1);
+stackedIconNode.add(Pos.BOTTOM_LEFT, iconNode2);
+</pre>
+<p><img src="images/javafx-example5.png"></p>
+
+<h3>Example 6 (CSS)</h3>
+
+<pre class="prettyprint lang-css">
+.myClass{
+-fx-icon-size: 48px;
+-fx-icon-code: "FontAwesome:F25B";
+-fx-fill: gray;
+}
+</pre>
+
+<pre class="prettyprint lang-java">
+// Register the IconFont
+IconFontFX.register(FontAwesome.getIconFont());
+
+IconNode iconNode = new IconNode();
+iconNode.getStyleClass().add("myClass");
+</pre>
+<p><img src="images/javafx-example6.png"></p>
+
+<h3>Example 7 (Custom font)</h3>
+
+<pre class="prettyprint lang-java">
+// Register my custom IconFont
+IconFontFX.register(new IconFont() {
+    @Override
+    public String getFontFamily() {
+        return "MyCustomFont";
+    }
+
+    @Override
+    public InputStream getFontInputStream() {
+        return MyClass.class.getResourceAsStream("/myCustomFont.ttf");
+    }
+});
+
+IconNode iconNode = new IconNode();
+iconNode.setIconCode(new DefaultIconCode("MyCustomFont", '\u1234'));
+</pre>
+
+<h3>Example 8 (Custom font + CSS)</h3>
+
+<pre class="prettyprint lang-css">
+.myCustomClass{
+-fx-icon-size: 48px;
+-fx-icon-code: "MyCustomFont:1234";
+-fx-fill: red;
+}
+</pre>
+
+<pre class="prettyprint lang-java">
+// Register my custom IconFont
+IconFontFX.register(new IconFont() {
+    @Override
+    public String getFontFamily() {
+        return "MyCustomFont";
+    }
+
+    @Override
+    public InputStream getFontInputStream() {
+        return MyClass.class.getResourceAsStream("/myCustomFont.ttf");
+    }
+});
+
+IconNode iconNode = new IconNode();
+iconNode.getStyleClass().add("myCustomClass");
+</pre>
+
+<h3>Example 9 (Image)</h3>
+
+<pre class="prettyprint lang-java">
+// Register the IconFont
+IconFontFX.register(FontAwesome.getIconFont());
+
+Stop[] stops = new Stop[]{new Stop(0, Color.YELLOW), new Stop(1, Color.RED)};
+LinearGradient fill = new LinearGradient(0, 0, 0, 1, true, CycleMethod.NO_CYCLE, stops);
+Color stroke = Color.BLACK;
+Image image = IconFontFX.buildImage(FontAwesome.SMILE_O, 80, fill, stroke);
+
+Label label = new Label();
+label.setGraphic(new ImageView(image));
+</pre>
+<p><img src="images/javafx-example9.png"></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2>License</h2>
+
+<p>jIconFont is distributed under the terms of the <a href="http://opensource.org/licenses/mit-license.html">MIT license</a>.</p>
+
+
+
+   
+
+<pre class="prettyprint lang-java">
+  private String a = null;
+    public void aa(String dada){
+    if(a==null){
+     jqwojewqo jewqojewqowqj owjewoqejoqw ejwq eowqj eoqwjowq jewqoejwqoewqjo eqwjeowqjeqwoej qwo jeqwo jeqwo jqwo jewqo ejwqowq
+    }
+  }
+</pre>
+      
+      </section>
+
+    
+ <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-11896519-3");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+    
+  </body>
+</html>
