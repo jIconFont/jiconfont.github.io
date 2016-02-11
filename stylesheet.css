@@ -72,6 +72,7 @@ h1 {
   color: rgba(73,140,2,1);
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
+text-shadow: 1px 1px 0 rgba(0,0,0,0.15) ;
 }
 
 h2 {
@@ -80,6 +81,7 @@ h2 {
   color: rgba(73,140,2,1);
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.15) ;
 }
 
 h3 {
@@ -88,6 +90,7 @@ margin: 25px 0 15px;
   color: rgba(73,140,2,1);
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.15) ;
 }
 
 body{
@@ -97,11 +100,13 @@ body{
   letter-spacing: 0.7px;
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.15) ;
 }
 
 a{
     color: rgba(0,135,204,1);
     text-decoration: none;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.15) ;
 }
 
 a:hover {
