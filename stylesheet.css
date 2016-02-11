@@ -37,6 +37,13 @@ header h2 {
   text-shadow: 2px 2px 2px rgba(0,0,0,0.5) ;
 }
 
+footer {
+  box-sizing: content-box;
+  margin: auto;
+  overflow: hidden;
+  border: none;
+}
+
 .content {
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
