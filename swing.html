@@ -39,6 +39,50 @@
 &lt;/dependency&gt;
 </pre>
 
+<h2>Usage</h2>
+
+<h3>Example 1</h3>
+<p><img src="images_swing/swing-example1.png"></p>
+<pre class="prettyprint lang-java">
+// Register the IconFont
+IconFontSwing.register(FontAwesome.getIconFont());
+
+Icon icon = IconFontSwing.buildIcon(FontAwesome.SMILE_O, 40, new Color(0, 150, 0));
+JLabel label = new JLabel(icon);
+</pre>
+
+<h3>Example 2</h3>
+<p><img src="images_swing/swing-example2.png"></p>
+<pre class="prettyprint lang-java">
+// Register the IconFont
+IconFontSwing.register(FontAwesome.getIconFont());
+
+JLabel label = new JLabel("Hello!");
+Icon icon = IconFontSwing.buildIcon(FontAwesome.SMILE_O, 18);
+label.setIcon(icon);
+</pre>
+
+<h3>Example 3</h3>
+<p><img src="images_swing/swing-example3.png"></p>
+<pre class="prettyprint lang-java">
+// Register the IconFont
+IconFontSwing.register(FontAwesome.getIconFont());
+
+Icon icon = IconFontSwing.buildIcon(FontAwesome.FLOPPY_O, 15);
+JButton button = new JButton(icon);
+</pre>
+
+<h3>Example 4</h3>
+<p><img src="images_swing/swing-example4.png"></p>
+<pre class="prettyprint lang-java">
+// Register the IconFont
+IconFontSwing.register(FontAwesome.getIconFont());
+
+JButton button = new JButton("Save");
+Icon icon = IconFontSwing.buildIcon(FontAwesome.FLOPPY_O, 15);
+button.setIcon(icon);
+</pre>
+
 <h2>License</h2>
 
 <p>jIconFont is distributed under the terms of the <a href="http://opensource.org/licenses/mit-license.html">MIT license</a>.</p>
