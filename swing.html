@@ -44,7 +44,6 @@
 <h3>Example 1</h3>
 <p><img src="images_swing/swing-example1.png"></p>
 <pre class="prettyprint lang-java">
-// Register the IconFont
 IconFontSwing.register(FontAwesome.getIconFont());
 
 Icon icon = IconFontSwing.buildIcon(FontAwesome.SMILE_O, 40, new Color(0, 150, 0));
@@ -54,7 +53,6 @@ JLabel label = new JLabel(icon);
 <h3>Example 2</h3>
 <p><img src="images_swing/swing-example2.png"></p>
 <pre class="prettyprint lang-java">
-// Register the IconFont
 IconFontSwing.register(FontAwesome.getIconFont());
 
 JLabel label = new JLabel("Hello!");
@@ -65,7 +63,6 @@ label.setIcon(icon);
 <h3>Example 3</h3>
 <p><img src="images_swing/swing-example3.png"></p>
 <pre class="prettyprint lang-java">
-// Register the IconFont
 IconFontSwing.register(FontAwesome.getIconFont());
 
 Icon icon = IconFontSwing.buildIcon(FontAwesome.FLOPPY_O, 15);
@@ -75,7 +72,6 @@ JButton button = new JButton(icon);
 <h3>Example 4</h3>
 <p><img src="images_swing/swing-example4.png"></p>
 <pre class="prettyprint lang-java">
-// Register the IconFont
 IconFontSwing.register(FontAwesome.getIconFont());
 
 JButton button = new JButton("Save");
@@ -85,7 +81,6 @@ button.setIcon(icon);
 
 <h3>Example 5 (Custom font)</h3>
 <pre class="prettyprint lang-java">
-// Register my custom IconFont
 IconFontSwing.register(new IconFont() {
     @Override
     public String getFontFamily() {
